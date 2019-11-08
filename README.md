@@ -2,9 +2,9 @@
 
 ## Welcome to Smart Noter.
 
-An easy-to-use solution to your visualization needs. Firstly, implemented along with the Vue.js framework, you can define your components, services, routes, and storages. Lastly, you can also use our own. We offer both solutions and all the essential tools that you need in order to construct a front-end. Please, follow along the next sections in order to learn more about this excellent tool.
+An easy-to-use solution to your annotation needs. Firstly, it is a fork from Doccano's framework, specifically designed for Weduu's customized needs. Please, follow along the next sections in order to learn more about this excellent tool.
 
-Smart Front is compatible with:
+Smart Noter is compatible with:
 - Python 3.6+
 - Django 2.1.7+
 - Node.js 8.0+
