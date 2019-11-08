@@ -1,13 +1,13 @@
 html,
 body {
-  /*font-family: 'Open Sans', serif;*/
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
-  background: #F9F9F9;
+  font-family: 'Raleway', sans-serif;
+  background: #f7f7f7;
+  height: 100%;
 }
 
 footer {
-  background-color: #2a2e2f !important;
-  padding: 2rem 1.5rem 3rem !important;
+  background-color: #272624 !important;
+  padding: 1.5rem !important;
 }
 
 .footer a {
@@ -20,21 +20,32 @@ footer {
 
 .footer p,
 strong {
-  color: lemonchiffon;
+  color: rgb(187, 187, 187);
 }
 
 .navbar {
-  background-color: #2a2e2f;
+  background-color: #272624;
 }
 
 .navbar.has-shadow {
   box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
 }
 
+.navbar-item img {
+	max-height: none;
+	margin-right: 0.5rem;
+}
+
 .navbar-burger,
 .navbar-item {
   color: white;
 }
+
+a.navbar-item:hover {
+	background-color: #2c2b29;
+	color: #c28d1c;
+}
+
 
 a.navbar-burger:hover {
   background-color: #fafafa;
@@ -172,6 +183,10 @@ p {
 .pagination-previous {
   background-color: white;
   margin-top: 20px;
+}
+
+.card-header {
+	border-bottom: 1px solid #e6e6e6;
 }
 
 .card-header-title {

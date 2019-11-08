@@ -17,7 +17,7 @@
         <form method="post" action="{% url 'login' %}">
           {% csrf_token %}
           <div class="field ">
-            <label class="label">Username</label>
+            <label class="label">Usuário</label>
             <div class="control has-icons-left has-icons-right">
               {{ form.username|add_class:"input" }}
               <span class="icon is-small is-left">
@@ -30,7 +30,7 @@
           </div>
 
           <div class="field">
-            <label class="label">Password</label>
+            <label class="label">Senha</label>
             <div class="control has-icons-left has-icons-right">
               {{ form.password|add_class:"input"}}
               <span class="icon is-small is-left">
@@ -43,14 +43,14 @@
           </div>
           <div class="field">
             <label class="checkbox">
-              <input type="checkbox"> Remember me
+              <input type="checkbox"> Lembrar-me
             </label>
           </div>
-          <input class="button is-block is-primary is-middle is-fullwidth" type="submit" value="Login" />
+          <input class="button is-block is-primary is-middle is-fullwidth" type="submit" value="Entrar" />
           {% if allow_signup %}
           <div class="field">
             <span class="checkbox" style="margin-top:10px">
-              Not registered yet ? <a href="{% url 'signup' %}"> Sign up </a>
+              Not registered yet ? <a href="{% url 'signup' %}"> Entrar </a>
             </span>
           </div>
           {% endif %}

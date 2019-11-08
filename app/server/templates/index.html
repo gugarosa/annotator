@@ -7,177 +7,151 @@
 {% endblock %}
 
 {% block content %}
-<section class="hero" style="background-color:#2a2e2f">
-  <div class="container">
-    <div class="columns">
-      <div class="column is-6">
-        <h1 class="title is-1 has-text-white">Text annotation for Human</h1>
-        <h2 class="subtitle is-4 has-text-white">Just create project, upload data and start annotation. You can build dataset in hours.</h2>
-        <p>
-          <a href="{% url 'demo-named-entity-recognition' %}" class="button is-medium is-primary">
-            Try Demo
-          </a>
-        </p>
-      </div>
-      <div class="column is-6">
-        <figure class="image">
-          <img src="{% static 'assets/images/named_entity_recognition.png' %}">
-        </figure>
-      </div>
+<section class="hero" style="background-image:linear-gradient(to bottom, #fafafa, #f3f3f3)">
+    <div class="container">
+        <div class="columns is-vcentered">
+            <div class="column is-6">
+                <h1 class="title is-1">Anotação de Dados para Humanos</h1>
+                <h2 class="subtitle is-4">Crie seu projeto, adicione seus dados e começe a anotar! Sua base de dados estará pronta em poucas horas.</h2>
+            </div>
+            <div class="column is-6">
+                <figure class="image">
+                    <img src="{% static 'assets/images/data_labeling.png' %}" alt="Anotação de Dados">
+                </figure>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
-<!-- <div class="hero-body" style="background-image:linear-gradient(to bottom, #fafafa, #f3f3f3)">
+<div class="hero-body" style="background-image:linear-gradient(to bottom, #fafafa, #f3f3f3)">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="columns is-vcentered">
+                    <div class="column is-5 is-offset-1">
+                        <figure class="image">
+                            <img src="{% static 'assets/images/doc_classification.png' %}" alt="Classificação de Documentos">
+                        </figure>
+                    </div>
+                    <div class="column is-5">
+                        <h1 class="title is-2">
+                            Classificação de Documentos
+                        </h1>
+                        <h2 class="subtitle is-4">
+                            Anotação de documentos para tarefas de classificação de documentos.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="columns is-vcentered">
+                    <div class="column is-5 is-offset-1">
+                        <figure class="image">
+                            <img src="{% static 'assets/images/ner.png' %}" alt="Reconhecimento de Entidades Nomeadas">
+                        </figure>
+                    </div>
+                    <div class="column is-5">
+                        <h1 class="title is-2">
+                            Reconhecimento de Entidades Nomeadas
+                        </h1>
+                        <h2 class="subtitle is-4">
+                            Uma interface extremamente simples para realizar a anotação de entidades nomeadas.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="columns is-vcentered">
+                    <div class="column is-5 is-offset-1">
+                        <figure class="image">
+                            <img src="{% static 'assets/images/seq2seq.png' %}" alt="Sequência para Sequência">
+                        </figure>
+                    </div>
+                    <div class="column is-5">
+                        <h1 class="title is-2">
+                            Sequência para Sequência
+                        </h1>
+                        <h2 class="subtitle is-4">
+                            Precisa de anotar sistemas de tradução? Você está na plataforma correta!
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="columns is-vcentered">
-          <div class="column is-5 is-offset-1">
-            <figure class="image">
-              <img src="{% static 'assets/images/sentiment_analysis.png' %}" alt="Description">
-            </figure>
-          </div>
-          <div class="column is-5">
-            <h1 class="title is-2">
-              Document Classification
-            </h1>
-            <h2 class="subtitle is-4">
-              Document annotation for any document classification tasks.
-            </h2>
-            <br>
-            <p>
-              <a href="{% url 'demo-text-classification' %}" class="button is-primary">
-                Try Demo
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="columns is-vcentered">
-          <div class="column is-5 is-offset-1">
-            <figure class="image">
-              <img src="{% static 'assets/images/named_entity_recognition.png' %}" alt="Description">
-            </figure>
-          </div>
-          <div class="column is-5">
-            <h1 class="title is-2">
-              Sequence Labeling
-            </h1>
-            <h2 class="subtitle is-4">
-              A super easy interface to tag for named entity recognition, part-of-speech tagging, semantic role labeling.
-            </h2>
-            <br>
-            <p>
-              <a href="{% url 'demo-named-entity-recognition' %}" class="button is-primary">
-                Try Demo
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <div class="columns is-vcentered">
-          <div class="column is-5 is-offset-1">
-            <figure class="image">
-              <img src="{% static 'assets/images/translation.png' %}" alt="Description">
-            </figure>
-          </div>
-          <div class="column is-5">
-            <h1 class="title is-2">
-              Sequence to Sequence
-            </h1>
-            <h2 class="subtitle is-4">
-              A super easy interface to label for any sequence to sequence tasks.
-            </h2>
-            <br>
-            <p>
-              <a href="{% url 'demo-translation' %}" class="button is-primary">
-                Try Demo
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
     </div>
+</div>
 
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-</div> -->
+<div class="hero-body" style="background-image:linear-gradient(to bottom, #fafafa, #f3f3f3)">
+    <div class="container">
 
-<!-- <div class="hero-body" style="background-image:linear-gradient(to bottom, #fafafa, #f3f3f3)">
-  <div class="container">
-
-    <div class="columns features">
-      <div class="column is-4">
-        <div class="card is-shady">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://source.unsplash.com/RWnpyGtY1aU" alt="Placeholder image" class="modal-button" data-target="modal-image2">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="content">
-              <h4>Team Collaboration</h4>
-              <p>Invite other users to help you annotate text and create an annotated corpus. You only have to create a guideline
-                and upload text data. Team collaboration can accelate annotation process.
-              </p>
+        <div class="columns features">
+            <div class="column is-4">
+                <div class="card is-shady">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="{% static 'assets/images/team_colab.png' %}" alt="Colaboração em Equipe"
+                                class="modal-button" data-target="modal-image2">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <h4>Colaboração em Equipe</h4>
+                            <p>Convide usuários para auxiliar em sua anotação de texto. Quaisquer colaborações em equipe podem acelar o processo de anotação.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-4">
-        <div class="card is-shady">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://source.unsplash.com/6Ticnhs1AG0" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="content">
-              <h4>Language independent</h4>
-              <p>doccano is independent on any languages. You can annotate texts regardless of your languages. You can quickly start annotating text.</p>
+            <div class="column is-4">
+                <div class="card is-shady">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="https://source.unsplash.com/6Ticnhs1AG0" alt="Indepêndencia de Linguagem">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <h4>Indepêndencia de Linguagem</h4>
+                            <p>O Smart Noter é independente de linguagens, ou seja, você pode utilizar anotações em português, inglês, espanhol, quaisquer linguagens desejadas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="column is-4 modal-button" data-target="modal-image">
-        <div class="card is-shady">
-          <div class="card-image">
-            <figure class="image is-4by3">
-              <img src="https://i.imgsafe.org/ba/baa924a5e3.png" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="content">
-              <h4>Auto labeling</h4>
-              <p>Auto labeling is one of the most powerful tools in creating annotated corpora. Machine learning model automatically
-                annotates texts. You're only required to correct a few error annotations.</p>
+            <div class="column is-4 modal-button" data-target="modal-image">
+                <div class="card is-shady">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="https://i.imgsafe.org/ba/baa924a5e3.png" alt="Anotação Automática">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="content">
+                            <h4>Anotação Automática</h4>
+                            <p>Aprendizado de máquina veio para auxiliar às suas necessidades, apenas precisando corrigir os erros e retroalimentar o sistema.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
-</div> -->
+</div>
 
 <footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <p>
-        Smart Noter @ 2019
-      </p>
-      <p>
-        Baseado em
-        <a href="https://github.com/chakki-works/doccano">doccano</a> por
-        <a href="https://github.com/Hironsan">Hironsan</a>.
-        <br>
-      </p>
+    <div class="container">
+        <div class="content has-text-centered">
+            <img class="mb5" src="{% static 'assets/images/footer.png' %}" width="120">
+            <p>
+                Baseado em
+                <a href="https://github.com/chakki-works/doccano">doccano</a> por
+                <a href="https://github.com/Hironsan">Hironsan</a>.
+                <br>
+            </p>
+        </div>
     </div>
-  </div>
 </footer>
 {% endblock %}
 

@@ -22,6 +22,6 @@ export function daysAgo(dateStr) {
   const daysDiff = Math.floor(msDiff / (1000 * 60 * 60 * 24));
 
   return daysDiff === 1
-    ? `${daysDiff} day ago`
-    : `${daysDiff} days ago`;
+    ? `${daysDiff} dia atrás`
+    : `${daysDiff} dias atrás`;
 }

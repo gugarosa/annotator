@@ -5,41 +5,41 @@
         div.columns
           div.column.is-10.is-offset-1
 
-            h1.title.is-1.has-text-white Hello, {{ username | title }}.
-            h2.subtitle.is-4.has-text-white I hope you are having a great day!
+            h1.title.is-1.has-text-white Olá, {{ username | title }}.
+            h2.subtitle.is-4.has-text-white Espero que hoje esteja sendo um ótimo dia de anotações!
 
             p(v-if="isSuperuser")
-              a.button.is-medium.is-primary(v-on:click="isActive = !isActive") Create Project
+              a.button.is-medium.is-primary(v-on:click="isActive = !isActive") Criar Projeto
 
     div.modal(v-bind:class="{ 'is-active': isActive }")
       div.modal-background
       div.modal-card
         header.modal-card-head
-          p.modal-card-title Create Project
+          p.modal-card-title Criar Projeto
           button.delete(aria-label="close", v-on:click="isActive = !isActive")
 
         section.modal-card-body
           div.field
-            label.label Project Name
+            label.label Nome do Projeto
             div.control
-              input.input(v-model="projectName", type="text", required, placeholder="Project name")
+              input.input(v-model="projectName", type="text", required, placeholder="Nome do Projeto")
             p.help.is-danger {{ projectNameError }}
 
           div.field
-            label.label Description
+            label.label Descrição
             div.control
-              textarea.textarea(v-model="description", required, placeholder="Project description")
+              textarea.textarea(v-model="description", required, placeholder="Descrição do Projeto")
             p.help.is-danger {{ descriptionError }}
 
           div.field
-            label.label Project Type
+            label.label Tipo do Projeto
 
             div.control
               select(v-model="projectType", name="project_type", required)
                 option(value="", selected="selected") ---------
-                option(value="DocumentClassification") document classification
-                option(value="SequenceLabeling") sequence labeling
-                option(value="Seq2seq") sequence to sequence
+                option(value="DocumentClassification") Classificação de Documentos
+                option(value="SequenceLabeling") Reconhecimento de Entidades Nomeadas
+                option(value="Seq2seq") Sequência para Sequência
             p.help.is-danger {{ projectTypeError }}
 
           div.field
@@ -51,7 +51,7 @@
                 style="margin-right: 0.25em;"
                 required
               )
-              | Randomize document order per user
+              | Utilizar ordem aleatória de documentos por usuário
 
           div.field
             label.checkbox
@@ -62,46 +62,46 @@
                 style="margin-right: 0.25em;"
                 required
               )
-              | Share annotations across all users
+              | Dividir anotações com todos os usuários
 
         footer.modal-card-foot.pt20.pb20.pr20.pl20.has-background-white-ter
-          button.button.is-primary(v-on:click="create()") Create
-          button.button(v-on:click="isActive = !isActive") Cancel
+          button.button.is-primary(v-on:click="create()") Criar
+          button.button(v-on:click="isActive = !isActive") Cancelar
 
     div.modal(v-bind:class="{ 'is-active': isDelete }")
       div.modal-background
       div.modal-card
         header.modal-card-head
-          p.modal-card-title Delete Project
+          p.modal-card-title Remover Projeto
           button.delete(aria-label="close", v-on:click="isDelete = !isDelete")
-        section.modal-card-body Are you sure you want to delete project?
+        section.modal-card-body Você tem certeza que deseja remover seu projeto?
         footer.modal-card-foot.pt20.pb20.pr20.pl20.has-background-white-ter
-          button.button.is-danger(v-on:click="deleteProject()") Delete
-          button.button(v-on:click="isDelete = !isDelete") Cancel
+          button.button.is-danger(v-on:click="deleteProject()") Remover
+          button.button(v-on:click="isDelete = !isDelete") Cancelar
 
     section.hero
       div.container
         div.columns
           div.column.is-10.is-offset-1
-            div.card.events-card
+            div.card.events-card.pb10
               header.card-header
-                p.card-header-title {{ items.length }} Projects
+                p.card-header-title {{ items.length }} Projetos
 
                 div.field.card-header-icon
                   div.control
                     div.select
                       select(v-model="selected")
-                        option(selected) All Project
-                        option Text Classification
-                        option Sequence Labeling
-                        option Seq2seq
+                        option(selected) Todos os Projetos
+                        option Classificação de Documentos
+                        option Reconhecimento de Entidades Nomeadas
+                        option Sequência para Sequência
 
               div.card-table
                 div.content
                   table.table.is-fullwidth
                     tbody
                       tr(v-for="project in selectedProjects", v-bind:key="project.id")
-                        td.pl15r
+                        td.pl15r.pt20.pb20
                           div.thumbnail-wrapper.is-vertical
                             img.project-thumbnail(
                               v-bind:src="project.image"
@@ -116,17 +116,23 @@
 
                             div.dataset-item__main-subtitle {{ project.description }}
                             div.dataset-item__main-info
-                              span.dataset-item__main-update updated
-                                span {{ project.updated_at | daysAgo }}
+                              span.dataset-item__main-update atualizado há
+                                span  {{ project.updated_at | daysAgo }}
 
                         td.is-vertical
-                          span.tag.is-normal {{ project.project_type }}
+                          span.tag.is-light.is-medium {{ mapProject(project.project_type) }}
 
                         td.is-vertical(v-if="isProjectAdmin.get(project.id)")
-                          a(v-bind:href="'/projects/' + project.id + '/docs'") Edit
+                          a(v-bind:href="'/projects/' + project.id + '/docs'")
+                            span.icon 
+                              span.fas.fa-edit
+                            span Editar
 
                         td.is-vertical(v-if="isProjectAdmin.get(project.id)")
-                          a.has-text-danger(v-on:click="setProject(project)") Delete
+                          a.has-text-danger(v-on:click="setProject(project)")
+                            span.icon 
+                              span.fas.fa-trash-alt
+                            span Remover
 </template>
 
 <script>
@@ -141,7 +147,7 @@ export default {
     isActive: false,
     isDelete: false,
     project: null,
-    selected: 'All Project',
+    selected: 'Todos os Projetos',
     projectName: '',
     description: '',
     projectType: '',
@@ -157,7 +163,7 @@ export default {
 
   computed: {
     selectedProjects() {
-      return this.items.filter(item => this.selected === 'All Project' || this.matchType(item.project_type));
+      return this.items.filter(item => this.selected === 'Todos os Projetos' || this.matchType(item.project_type));
     },
   },
 
@@ -192,15 +198,27 @@ export default {
 
     matchType(projectType) {
       if (projectType === 'DocumentClassification') {
-        return this.selected === 'Text Classification';
+        return this.selected === 'Classificação de Documentos';
       }
       if (projectType === 'SequenceLabeling') {
-        return this.selected === 'Sequence Labeling';
+        return this.selected === 'Reconhecimento de Entidades Nomeadas';
       }
       if (projectType === 'Seq2seq') {
-        return this.selected === 'Seq2seq';
+        return this.selected === 'Sequência para Sequência';
       }
       return false;
+    },
+
+    mapProject(projectType) {
+      if (projectType === 'DocumentClassification') {
+        return 'Classificação de Documentos';
+      }
+      if (projectType === 'SequenceLabeling') {
+        return 'Reconhecimento de Entidades Nomeadas';
+      }
+      if (projectType === 'Seq2seq') {
+        return 'Sequência para Sequência';
+      }
     },
 
     create() {
@@ -210,7 +228,7 @@ export default {
         project_type: this.projectType,
         randomize_document_order: this.randomizeDocumentOrder,
         collaborative_annotation: this.collaborativeAnnotation,
-        guideline: 'Please write annotation guideline.',
+        guideline: 'Por favor escreve o guia de regras de anotações.',
         resourcetype: this.resourceType(),
       };
       defaultHttpClient.post('/v1/projects', payload)
