@@ -9,13 +9,16 @@
             h2.subtitle.is-4.has-text-white Espero que hoje esteja sendo um ótimo dia de anotações!
 
             p(v-if="isSuperuser")
-              a.button.is-medium.is-primary(v-on:click="isActive = !isActive") Criar Projeto
+              a.button.is-medium.is-dark(v-on:click="isActive = !isActive")
+                span.icon 
+                  span.fas.fa-plus-square
+                span Novo Projeto
 
     div.modal(v-bind:class="{ 'is-active': isActive }")
       div.modal-background
       div.modal-card
         header.modal-card-head
-          p.modal-card-title Criar Projeto
+          p.modal-card-title Novo Projeto
           button.delete(aria-label="close", v-on:click="isActive = !isActive")
 
         section.modal-card-body
@@ -65,8 +68,14 @@
               | Dividir anotações com todos os usuários
 
         footer.modal-card-foot.pt20.pb20.pr20.pl20.has-background-white-ter
-          button.button.is-primary(v-on:click="create()") Criar
-          button.button(v-on:click="isActive = !isActive") Cancelar
+          button.button.is-dark(v-on:click="create()")
+            span.icon 
+              span.fas.fa-check
+            span Confirmar
+          button.button(v-on:click="isActive = !isActive")
+            span.icon 
+              span.fas.fa-times
+            span Cancelar
 
     div.modal(v-bind:class="{ 'is-active': isDelete }")
       div.modal-background
@@ -74,10 +83,18 @@
         header.modal-card-head
           p.modal-card-title Remover Projeto
           button.delete(aria-label="close", v-on:click="isDelete = !isDelete")
-        section.modal-card-body Você tem certeza que deseja remover seu projeto?
+        section.modal-card-body Você tem certeza que deseja remover o projeto 
+          b(v-if="project") {{ project.name }}
+          span ?
         footer.modal-card-foot.pt20.pb20.pr20.pl20.has-background-white-ter
-          button.button.is-danger(v-on:click="deleteProject()") Remover
-          button.button(v-on:click="isDelete = !isDelete") Cancelar
+          button.button.is-danger(v-on:click="deleteProject()")
+            span.icon 
+              span.fas.fa-trash-alt
+            span Remover
+          button.button(v-on:click="isDelete = !isDelete")
+            span.icon 
+              span.fas.fa-times
+            span Cancelar
 
     section.hero
       div.container
@@ -98,7 +115,7 @@
 
               div.card-table
                 div.content
-                  table.table.is-fullwidth
+                  table.table.is-fullwidth.is-hoverable
                     tbody
                       tr(v-for="project in selectedProjects", v-bind:key="project.id")
                         td.pl15r.pt20.pb20
@@ -120,16 +137,16 @@
                                 span  {{ project.updated_at | daysAgo }}
 
                         td.is-vertical
-                          span.tag.is-light.is-medium {{ mapProject(project.project_type) }}
+                          span.tag.is-grey.is-medium {{ mapProject(project.project_type) }}
 
                         td.is-vertical(v-if="isProjectAdmin.get(project.id)")
-                          a(v-bind:href="'/projects/' + project.id + '/docs'")
+                          a.button.is-info.is-outlined(v-bind:href="'/projects/' + project.id + '/docs'")
                             span.icon 
                               span.fas.fa-edit
                             span Editar
 
                         td.is-vertical(v-if="isProjectAdmin.get(project.id)")
-                          a.has-text-danger(v-on:click="setProject(project)")
+                          a.button.is-danger.is-outlined(v-on:click="setProject(project)")
                             span.icon 
                               span.fas.fa-trash-alt
                             span Remover
