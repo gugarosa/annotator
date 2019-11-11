@@ -35,6 +35,7 @@ RUN cd /smart_noter \
 FROM python:${PYTHON_VERSION}-slim-stretch AS runtime
 
 COPY --from=builder /smart_noter/tools/install-mssql.sh /smart_noter/tools/install-mssql.sh
+RUN ["chmod", "+x", "/smart_noter/tools/install-mssql.sh"]
 RUN /smart_noter/tools/install-mssql.sh
 
 RUN useradd -ms /bin/sh smart_noter
