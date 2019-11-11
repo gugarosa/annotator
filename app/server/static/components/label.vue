@@ -114,7 +114,7 @@
               p.level-item
                 div.field.is-grouped
                   p.control
-                    a.button.is-info.is-outlined(v-on:click="editLabel(label)")
+                    a.button.is-dark.is-outlined(v-on:click="editLabel(label)")
                       span.icon
                         i.fas.fa-pencil-alt
                       span Editar

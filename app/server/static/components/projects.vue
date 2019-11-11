@@ -140,7 +140,7 @@
                           span.tag.is-grey.is-medium {{ mapProject(project.project_type) }}
 
                         td.is-vertical(v-if="isProjectAdmin.get(project.id)")
-                          a.button.is-info.is-outlined(v-bind:href="'/projects/' + project.id + '/docs'")
+                          a.button.is-dark.is-outlined(v-bind:href="'/projects/' + project.id + '/docs'")
                             span.icon 
                               span.fas.fa-pencil-alt
                             span Anotar
