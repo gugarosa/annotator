@@ -2,7 +2,6 @@ html,
 body {
   font-family: 'Raleway', sans-serif;
   background: #f7f7f7;
-  height: 100%;
 }
 
 footer {
@@ -31,9 +30,22 @@ strong {
   box-shadow: 0 4px 8px rgba(65, 65, 65, 0.5);
 }
 
+.navbar-brand {
+	align-items: center;
+}
+
+.navbar-item {
+	padding: 0.75rem 0.5rem;
+}
+
 .navbar-item img {
 	max-height: none;
 	margin-right: 0.5rem;
+}
+
+.navbar-burger {
+	height: 4.25rem;
+	width: 4.25rem;
 }
 
 .navbar-burger,
@@ -48,13 +60,17 @@ a.navbar-item:hover {
 
 
 a.navbar-burger:hover {
-  background-color: #fafafa;
-  color: #3273dc;
+	background-color: #2c2b29;
+	color: #c28d1c;
+}
+
+.navbar-menu {
+	background-color: #272624;
 }
 
 .navbar-menu.is-active .navbar-item,
 .navbar-menu.is-active .navbar-link {
-  color: #4a4a4a;
+  color: #ffffff;
 }
 
 .navbar-menu.is-active .navbar-dropdown .navbar-item {
@@ -64,7 +80,7 @@ a.navbar-burger:hover {
 .navbar-menu.is-active .navbar-dropdown .navbar-item:hover,
 .navbar-menu.is-active .navbar-item:hover,
 .navbar-menu.is-active .navbar-link:hover {
-  color: #3273dc;
+  color: #c28d1c;
 }
 
 .topNav {

@@ -142,8 +142,8 @@
                         td.is-vertical(v-if="isProjectAdmin.get(project.id)")
                           a.button.is-info.is-outlined(v-bind:href="'/projects/' + project.id + '/docs'")
                             span.icon 
-                              span.fas.fa-edit
-                            span Editar
+                              span.fas.fa-pencil-alt
+                            span Anotar
 
                         td.is-vertical(v-if="isProjectAdmin.get(project.id)")
                           a.button.is-danger.is-outlined(v-on:click="setProject(project)")
