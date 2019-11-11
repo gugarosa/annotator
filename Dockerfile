@@ -6,7 +6,7 @@ RUN curl -sL "https://deb.nodesource.com/setup_${NODE_VERSION}" | bash - \
  && apt-get install --no-install-recommends -y \
       nodejs
 
-RUN chmod +x /smart_noter/tools/*
+CMD ["chmod +x /smart_noter/tools/*"]
 
 COPY tools/install-mssql.sh /smart_noter/tools/install-mssql.sh
 RUN /smart_noter/tools/install-mssql.sh --dev
