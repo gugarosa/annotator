@@ -10,7 +10,7 @@ block select-format-area
       v-bind:checked="format == 'json'"
       v-model="format"
     )
-    | JSONL
+    | JSON
 
   label.radio
     input(
@@ -20,7 +20,7 @@ block select-format-area
       v-bind:checked="format == 'json1'"
       v-model="format"
     )
-    | JSON(Text-Labels)
+    | JSON (Apenas Rótulos)
 
 block example-format-area
   pre.code-block(v-show="format == 'json'")

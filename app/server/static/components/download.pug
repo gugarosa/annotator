@@ -5,19 +5,22 @@ div.columns(v-cloak="")
     div.card
 
       header.card-header
-        p.card-header-title File Downloader
+        p.card-header-title Exportar Arquivo
 
       div.card-content
-        h2.subtitle Download labeled data
+        h2.subtitle Exportar base de dados de anotações.
 
         div.control(style="margin-bottom: 1em;")
           block select-format-area
 
         block example-format-area
 
-        button.button.is-primary(
+        button.button.is-dark(
           style="margin-top: 1em;"
           type="submit"
           v-on:click="download()"
           v-bind:class="{'is-loading': isLoading}"
-        ) Download
+        )
+          span.icon
+            span.fas.fa-download
+          span Exportar

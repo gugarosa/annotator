@@ -45,10 +45,10 @@
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                 </a>
-                {% block navigation %}{% endblock %}
             </div>
             <div id="topNav" class="navbar-menu">
                 <div class="navbar-end">
+                    {% block navigation %}{% endblock %}
                     {% if user.is_authenticated %}
                     <a class="navbar-item" href="{% url 'projects' %}">
                         <span class="icon">

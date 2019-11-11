@@ -4,10 +4,10 @@ div.columns(v-cloak="")
 
     div.card
       header.card-header
-        p.card-header-title File Uploader
+        p.card-header-title Importar Arquivo
 
       div.card-content
-        h2.subtitle Upload a file to annotate text.
+        h2.subtitle Importe um arquivo para começar a anotar sua base de dados.
 
         div.control(style="margin-bottom: 1em;")
           label.radio
@@ -18,7 +18,7 @@ div.columns(v-cloak="")
               name="format"
               value="plain"
             )
-            | Plain
+            | Texto
 
           block select-format-area
 
@@ -27,7 +27,7 @@ div.columns(v-cloak="")
         div.field.is-grouped(style="margin-top: 1em;")
 
           div.control
-            div.file.has-name.is-primary
+            div.file.has-name.is-dark
               label.file-label
                 input.file-input(
                   v-on:change="upload()"
@@ -39,7 +39,7 @@ div.columns(v-cloak="")
                 span.file-cta.button(v-bind:class="{'is-loading': isLoading}")
                   span.file-icon
                     i.fas.fa-upload
-                  span.file-label Select a file…
+                  span.file-label Selecione um arquivo
                 span.file-name {{ file.name }}
 
           div.control(v-if="canUploadFromCloud")
@@ -49,7 +49,7 @@ div.columns(v-cloak="")
             )
               span.file-icon
                 i.fa.fa-cloud-upload-alt
-              span Browse cloud…
+              span Procurar na nuvem...
 
         div(v-if="isCloudUploadActive")
           iframe(

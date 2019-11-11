@@ -20,7 +20,7 @@ block select-format-area
       v-bind:checked="format == 'json'"
       v-model="format"
     )
-    | JSONL
+    | JSON
 
 block example-format-area
   pre.code-block(v-show="format == 'csv'")

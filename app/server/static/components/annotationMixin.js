@@ -281,8 +281,8 @@ export default {
       const document = this.docs[this.pageNumber];
 
       return this.documentAnnotationsAreApproved
-        ? `Annotations approved by ${document.annotation_approver}, click to reject annotations`
-        : 'Click to approve annotations';
+        ? `Anotações aprovas por ${document.annotation_approver}. Clique para rejeitá-las.`
+        : 'Clique para aprovar as anotações.';
     },
 
     documentMetadata() {

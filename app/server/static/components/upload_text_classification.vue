@@ -20,7 +20,7 @@ block select-format-area
       v-bind:checked="format == 'json'"
       v-model="format"
     )
-    | JSONL
+    | JSON
 
   label.radio
     input(

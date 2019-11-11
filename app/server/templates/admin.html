@@ -8,21 +8,21 @@
 {% block navigation %}
 <a class="navbar-item" href="{% url 'annotation' view.kwargs.project_id %}">
   <span class="icon">
-    <i class="fas fa-user-edit"></i>
+    <i class="fas fa-tags"></i>
   </span>
-  <b>Annotate Data</b>
+  <span>Anotações</span>
 </a>
 <a class="navbar-item" href="{% url 'upload' view.kwargs.project_id %}">
   <span class="icon">
     <i class="fas fa-upload"></i>
   </span>
-  <b>Import Data</b>
+  <span>Importar</span>
 </a>
 <a class="navbar-item" href="{% url 'download' view.kwargs.project_id %}">
   <span class="icon">
     <i class="fas fa-download"></i>
   </span>
-  <b>Export Data</b>
+  <span>Exportar</span>
 </a>
 {% endblock %}
 {% block content %}
