@@ -7,11 +7,11 @@
     <div class="column is-4 is-offset-4">
       <div class="box has-text-left">
         {% if form.errors %}
-        <p>Your username and password didn't match. Please try again.</p>
+        <p>O usuário e senha não conferem. Por favor, tente de novo.</p>
         {% endif %} {% if next %} {% if user.is_authenticated %}
-        <p>Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
+        <p>Seu usuário não possui acesso à esta página. Para prosseguir, entre com um usuário que possua tal acesso.</p>
         {% else %}
-        <p>Please login to see this page.</p>
+        <p>Você precisa estar logado para ver esta página.</p>
         {% endif %} {% endif %}
 
         <form method="post" action="{% url 'login' %}">
@@ -50,7 +50,7 @@
           {% if allow_signup %}
           <div class="field">
             <span class="checkbox" style="margin-top:10px">
-              Not registered yet ? <a href="{% url 'signup' %}"> Entrar </a>
+              Ainda não está registrado? <a href="{% url 'signup' %}"> Entrar </a>
             </span>
           </div>
           {% endif %}
@@ -62,13 +62,13 @@
         {% if github_login %}
         <a href="{% url 'social:begin' 'github' %}" class="button is-fullwidth mb10">
           <span class="icon"><i class="fab fa-github"></i></span>
-          <span>Login with Github</span>
+          <span>Logar com Github</span>
         </a>
         {% endif %}
         {% if aad_login %}
         <a href="{% url 'social:begin' 'azuread-tenant-oauth2' %}" class="button is-fullwidth mb10">
           <span class="icon"><i class="fab fa-microsoft"></i></span>
-          <span>Login with Active Directory</span>
+          <span>Logar com Active Directory</span>
         </a>
         {% endif %}
       </div>
