@@ -22,8 +22,6 @@ RUN pip install -r /requirements.txt \
 COPY . /smart_noter
 
 WORKDIR /smart_noter
-RUN ["chmod", "+x", "/smart_noter/tools/ci.sh"]
-RUN tools/ci.sh
 
 FROM builder AS cleaner
 
