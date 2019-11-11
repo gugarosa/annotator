@@ -68,7 +68,7 @@ Open a Web browser and go to <http://127.0.0.1:8000/login/>. You should see the 
 
 ## Deployment
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://github.com/recogna-lab/smart_noter)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/recogna-lab/smart_noter)
 
 ---
 
