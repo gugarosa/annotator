@@ -34,7 +34,7 @@ div.columns(v-cloak="")
                         value="all"
                         checked=""
                       )
-                      | All
+                      | Todos
                   a.dropdown-item
                     label.radio
                       input(
@@ -42,7 +42,7 @@ div.columns(v-cloak="")
                         type="radio"
                         value="active"
                       )
-                      | Active
+                      | Ativo
                   a.dropdown-item
                     label.radio
                       input(
@@ -50,7 +50,7 @@ div.columns(v-cloak="")
                         type="radio"
                         value="completed"
                       )
-                      | Completed
+                      | Completado
 
       div.main.pt0.pb0.pr20.pl20
         span About {{ count }} results (page {{ paginationPage }} of {{ paginationPages }})
@@ -73,7 +73,7 @@ div.columns(v-cloak="")
       div.modal-background
       div.modal-card
         header.modal-card-head
-          p.modal-card-title Annotation Guideline
+          p.modal-card-title Guia de Anotações
           button.delete(
             v-on:click="isAnnotationGuidelineActive = !isAnnotationGuidelineActive"
             aria-label="close"

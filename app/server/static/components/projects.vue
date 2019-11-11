@@ -245,7 +245,7 @@ export default {
         project_type: this.projectType,
         randomize_document_order: this.randomizeDocumentOrder,
         collaborative_annotation: this.collaborativeAnnotation,
-        guideline: 'Por favor escreve o guia de regras de anotações.',
+        guideline: 'Por favor, escreva o guia das regras de anotações.',
         resourcetype: this.resourceType(),
       };
       defaultHttpClient.post('/v1/projects', payload)

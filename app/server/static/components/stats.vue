@@ -5,8 +5,8 @@
         div.card
 
           header.card-header
-            p.card-header-title Label stats
-            a.card-header-icon(href="#", aria-label="more options")
+            p.card-header-title Estatísticas dos Rótulos
+            a.card-header-icon(href="#", aria-label="Mais opções")
               span.icon
                 i.fas.fa-angle-down(aria-hidden="true")
 
@@ -14,7 +14,7 @@
             div.column.is-8
               line-chart(v-bind:chart-data="labelData")
             div.column.is-4
-              h2.subtitle Annotation Progress
+              h2.subtitle Progresso da Anotação
               doughnut-chart(v-bind:chart-data="progressData")
 
     div.columns
@@ -22,8 +22,8 @@
         div.card
 
           header.card-header
-            p.card-header-title User stats
-            a.card-header-icon(href="#", aria-label="more options")
+            p.card-header-title Estatísticas dos Usuários
+            a.card-header-icon(href="#", aria-label="Mais opções")
               span.icon
                 i.fas.fa-angle-down(aria-hidden="true")
 
@@ -106,19 +106,19 @@ export default {
 
   created() {
     HTTP.get('statistics').then((response) => {
-      this.labelData = this.makeData(response.data.label, 'Label stats');
-      this.userData = this.makeData(response.data.user, 'User stats');
+      this.labelData = this.makeData(response.data.label, 'Estatísticas dos Rótulos');
+      this.userData = this.makeData(response.data.user, 'Estatísticas dos Usuários');
       const complete = response.data.total - response.data.remaining;
       const incomplete = response.data.remaining;
       this.progressData = {
         datasets: [{
           data: [complete, incomplete],
-          backgroundColor: ['#00d1b2', '#ffdd57'],
+          backgroundColor: ['hsl(141, 71%, 48%)', 'hsl(48, 100%, 67%)'],
         }],
 
         labels: [
-          'Completed',
-          'Incomplete',
+          'Completo',
+          'Incompleto',
         ],
       };
     });
@@ -132,7 +132,7 @@ export default {
         labels: labels,
         datasets: [{
           label: label,
-          backgroundColor: '#00d1b2',
+          backgroundColor: 'hsl(0, 0%, 21%)',
           data: counts,
         }],
       };

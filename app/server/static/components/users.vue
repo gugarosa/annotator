@@ -2,19 +2,22 @@
   div.user-table
     div.columns.is-multiline
       div.column.is-12
-        a.button.is-primary(v-on:click="createNewRoleMapping()") Add Existing User
+        a.button.is-dark(v-on:click="createNewRoleMapping()")
+          span.icon 
+            span.fas.fa-plus
+          span Adicionar Usuário
 
       div.column.is-12(v-if="newRoleMapping")
         div.box
           div.columns.is-multiline
             div.column
               b-field(
-                label="User Name"
+                label="Usuário"
                 v-bind:type="{ 'is-danger': getAddUserMessage }"
                 v-bind:message="getAddUserMessage"
               )
                 b-select(
-                  placeholder="e.g. Anne"
+                  placeholder="Selecione um usuário..."
                   v-model="newRoleMapping.username"
                   v-on:input="option => {checkValidExistingUser(option);\
                     newRoleMapping.userid = option}"
@@ -23,9 +26,9 @@
                     | {{ otherUser.username }}
 
             div.column
-              b-field(label="Role")
+              b-field(label="Permissão")
                 b-select(
-                  placeholder="Select a role"
+                  placeholder="Selecione uma permissão..."
                   v-model="newRoleMapping.roleid"
                 )
                   option(v-for="role in roles", v-bind:value="role.id", v-bind:key="role.id")
@@ -35,22 +38,28 @@
                 label.label &nbsp;
                 div.field.is-grouped
                   p.control
-                    b-button(type="is-light", v-on:click="cancelCreate()") Cancel
-
-                  p.control
                     b-button(
-                      type="is-primary"
+                      type="is-dark"
                       v-on:click="addRoleMapping()"
                       v-bind:disabled="isDisabled"
-                    ) Add User
+                    )
+                      span.icon 
+                        span.fas.fa-plus
+                      span Adicionar
+
+                  p.control
+                    b-button(v-on:click="cancelCreate()")
+                      span.icon 
+                        span.fas.fa-times
+                      span Cancelar
     div.card
       b-table(v-bind:data="roleMappings", icon-pack="fas", default-sort="username", striped=true)
         template(slot-scope="props")
-          b-table-column(field="username", label="User Name", sortable="")
+          b-table-column(field="username", label="Usuário", sortable="")
             | {{ props.row.username }}
-          b-table-column(field="rolename", label="Role", sortable="")
+          b-table-column(field="rolename", label="Permissão", sortable="")
             b-dropdown(aria-role="list")
-              button.button.is-primary(slot="trigger")
+              button.button.is-dark(slot="trigger")
                 span {{ props.row.rolename }}
                 b-icon(icon="chevron-down", pack="fas", size="is-small", custom-size="fa-xs")
               b-dropdown-item(
@@ -60,11 +69,11 @@
                 v-on:click="switchRole(props.row.user, otherRole.id)"
               )
                 | {{ otherRole.name }}
-          b-table-column(label="Action")
-            a.button.is-text(v-on:click="removeRoleMapping(props.row.id)")
-              span.icon.is-small
+          b-table-column(label="Ações")
+            a.button.is-danger.is-outlined(v-on:click="removeRoleMapping(props.row.id)")
+              span.icon
                 i.fas.fa-trash
-              span Delete
+              span Remover
 </template>
 
 <style>
@@ -108,10 +117,10 @@ export default {
 
     getAddUserMessage() {
       if (this.hasNewUserError) {
-        return 'Not an exsiting user!';
+        return 'Não é um usuário existente!';
       }
       if (!this.otherUsers.length) {
-        return 'No other users left to add!';
+        return 'Não existem mais usuários para serem adicionados!';
       }
       return null;
     },

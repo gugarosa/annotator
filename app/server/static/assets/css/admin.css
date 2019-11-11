@@ -1,6 +1,6 @@
 .aside {
   display: block;
-  background-color: #2a2e2f;
+  background-color: #272624;
   border-right: 1px solid #DEDEDE;
 }
 
@@ -30,18 +30,20 @@
 .aside .main .item {
   display: flex;
   padding: 10px 0;
-  color: #6F7B7E;
+  color: rgb(255, 255, 255);
 }
 
 .aside .main .item.active {
-  background-color: #5a5e5f;
+  background-color: #2c2b29;
+  color: #c28d1c;
   margin: 0 -50px;
   padding-left: 50px;
 }
 
 .aside .main .item:active,
 .aside .main .item:hover {
-  background-color: #5a5e5f;
+  background-color: #2c2b29;
+  color: #c28d1c;
   margin: 0 -50px;
   padding-left: 50px;
 }
@@ -49,12 +51,10 @@
 .aside .main .icon {
   font-size: 19px;
   padding-right: 30px;
-  color: #f3f3f3;
 }
 
 .aside .main .name {
   font-size: 15px;
-  color: #f3f3f3;
   font-weight: 500;
 }
 

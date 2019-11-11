@@ -4,7 +4,10 @@
 
     div.columns.is-multiline
       div.column.is-12
-        a.button.is-primary(v-on:click="createLabel()") New label
+        a.button.is-dark(v-on:click="createLabel()")
+          span.icon
+            span.fas.fa-plus
+          span Adicionar Rótulo
 
       div.column.is-12(v-if="newLabel")
         div.box
@@ -21,17 +24,17 @@
 
             div.column
               div.field
-                label.label Label name
+                label.label Nome do Rótulo
                 div.control
                   input.input(
                     type="text"
-                    placeholder="Text input"
+                    placeholder="Insira o nome do rótulo..."
                     v-model="newLabel.text"
                   )
 
             div.column
               div.field
-                label.label Shortcut
+                label.label Atalho
                 div.field.has-addons
                   p.control
                     span.select
@@ -44,12 +47,12 @@
                   div.control
                     div.select
                       select(v-model="newLabel.suffix_key")
-                        option(disabled="", value="") key
+                        option(disabled="", value="") Tecla
                         option(v-for="ch in shortKeys", v-bind:key="ch") {{ ch }}
 
             div.column
               div.field
-                label.label Color
+                label.label Cor
                 div.field.has-addons
                   div.control
                     div.form__field
@@ -73,16 +76,22 @@
                 label.label &nbsp;
                 div.field.is-grouped
                   p.control
-                    a.button.is-light(v-on:click="cancelCreate()") Cancel
+                    a.button.is-dark(v-on:click="addLabel()")
+                      span.icon
+                        span.fas.fa-plus
+                      span Adicionar
 
                   p.control
-                    a.button.is-primary(v-on:click="addLabel()") Create label
+                    a.button(v-on:click="cancelCreate()")
+                      span.icon
+                        span.fas.fa-times
+                      span Cancelar
 
     div.card
       header.card-header
-        p.card-header-title {{ labels.length }} labels
+        p.card-header-title {{ labels.length }} rótulo(s)
 
-        a.card-header-icon(href="#", aria-label="more options")
+        a.card-header-icon(href="#", aria-label="Mais opções")
           span.icon
             i.fas.fa-angle-down(aria-hidden="true")
 
@@ -105,31 +114,31 @@
               p.level-item
                 div.field.is-grouped
                   p.control
-                    a.button.is-text(v-on:click="editLabel(label)")
-                      span.icon.is-small
+                    a.button.is-info.is-outlined(v-on:click="editLabel(label)")
+                      span.icon
                         i.fas.fa-pencil-alt
-                      span Edit
+                      span Editar
 
                   p.control
-                    a.button.is-text(v-on:click="removeLabel(label)")
-                      span.icon.is-small
+                    a.button.is-danger.is-outlined(v-on:click="removeLabel(label)")
+                      span.icon
                         i.fas.fa-trash
-                      span Delete
+                      span Remover
 
           div.columns(v-show="label === editedLabel")
             div.column
               div.field
-                label.label Label name
+                label.label Nome do Rótulo
                 div.control
                   input.input(
                     type="text"
-                    placeholder="Text input"
+                    placeholder="Insira o nome do rótulo..."
                     v-model="label.text"
                   )
 
             div.column
               div.field
-                label.label Shortcut
+                label.label Atalho
                 div.field.has-addons
                   p.control
                     span.select
@@ -142,12 +151,12 @@
                   div.control
                     div.select
                       select(v-model="label.suffix_key")
-                        option(disabled="", value="") key
+                        option(disabled="", value="") Tecla
                         option(v-for="ch in shortKeys", v-bind:key="ch") {{ ch }}
 
             div.column
               div.field
-                label.label Color
+                label.label Cor
                 div.field.has-addons
                   div.control
                     div.form__field
@@ -171,10 +180,16 @@
                 label.label &nbsp;
                 div.field.is-grouped
                   p.control
-                    a.button.is-light(v-on:click="cancelEdit(label)") Cancel
+                    a.button.is-dark(v-on:click="doneEdit(label)")
+                      span.icon
+                        span.fas.fa-save
+                      span Atualizar
 
                   p.control
-                    a.button.is-primary(v-on:click="doneEdit(label)") Save changes
+                    a.button(v-on:click="cancelEdit(label)")
+                      span.icon
+                        span.fas.fa-times
+                      span Cancelar
 </template>
 
 <style scoped>
