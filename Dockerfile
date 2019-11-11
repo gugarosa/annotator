@@ -6,9 +6,9 @@ RUN curl -sL "https://deb.nodesource.com/setup_${NODE_VERSION}" | bash - \
  && apt-get install --no-install-recommends -y \
       nodejs
 
-CMD ["chmod +x /smart_noter/tools/*"]
 
 COPY tools/install-mssql.sh /smart_noter/tools/install-mssql.sh
+RUN ["chmod", "+x", "/smart_noter/tools/install-mssql.sh"]
 RUN /smart_noter/tools/install-mssql.sh --dev
 
 COPY app/server/static/package*.json /smart_noter/app/server/static/
@@ -22,6 +22,7 @@ RUN pip install -r /requirements.txt \
 COPY . /smart_noter
 
 WORKDIR /smart_noter
+RUN ["chmod", "+x", "/smart_noter/tools/ci.sh"]
 RUN tools/ci.sh
 
 FROM builder AS cleaner
@@ -46,7 +47,7 @@ RUN pip install --no-cache-dir /deps/*.whl
 COPY --from=cleaner --chown=smart_noter:smart_noter /smart_noter /smart_noter
 
 ENV DEBUG="True"
-ENV SECRET_KEY="change-me-in-production"
+ENV SECRET_KEY="Iamasecretkeyprodready"
 ENV PORT="8000"
 ENV WORKERS="2"
 ENV GOOGLE_TRACKING_ID=""
@@ -56,4 +57,5 @@ USER smart_noter
 WORKDIR /smart_noter
 EXPOSE ${PORT}
 
+RUN ["chmod", "+x", "/smart_noter/tools/run.sh"]
 CMD ["/smart_noter/tools/run.sh"]
