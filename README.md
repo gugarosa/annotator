@@ -66,6 +66,12 @@ Open a Web browser and go to <http://127.0.0.1:8000/login/>. You should see the 
 
 ---
 
+## Deployment
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+---
+
 ## Environment configuration
 
 Note that sometimes, there is a need for additional implementation. If needed, from here you will be the one to know all of its details.

@@ -1,0 +1,48 @@
+{
+    "name": "smart_noter",
+    "description": "A Doccano-based project with Weduu's customized needs.",
+    "keywords": ["Python", "Machine Learning", "Annotation"],
+    "website": "",
+    "repository": "https://github.com/recogna-lab/smart_noter",
+    "logo": "",
+    "success_url": "/",
+    "env": {
+        "ADMIN_USER_NAME": {
+            "description": "The user name for the admin account."
+        },
+        "ADMIN_CONTACT_EMAIL": {
+            "description": "The contact email address for the admin account."
+        },
+        "ADMIN_PASSWORD": {
+            "description": "The password for the admin account."
+        },
+        "SECRET_KEY": {
+            "description": "The value to use as the Django secret key.",
+            "generator": "secret"
+        },
+        "GOOGLE_TRACKING_ID": {
+            "description": "Google Analytics tracking id.",
+            "required": false,
+            "value": ""
+        },
+        "DEBUG": {
+            "description": "Debug mode or not.",
+            "required": false,
+            "value": "False"
+        },
+        "ALLOW_SIGNUP": {
+            "description": "Allow users to signup themselves or not",
+            "required": false,
+            "value": "True"
+        }
+    },
+    "stack": "container",
+    "scripts": {
+        "postdeploy": "sh tools/heroku.sh"
+    },
+    "addons": [
+        {
+            "plan": "heroku-postgresql:hobby-dev"
+        }
+    ]
+}
