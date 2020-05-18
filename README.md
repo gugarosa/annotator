@@ -1,10 +1,10 @@
-# Smart Noter: A Doccano-based Annotator
+# Annotator: A Doccano-based Annotator
 
-## Welcome to Smart Noter.
+## Welcome to Annotator.
 
 An easy-to-use solution to your annotation needs. Firstly, it is a fork from Doccano's framework, specifically designed for Weduu's customized needs. Please, follow along the next sections in order to learn more about this excellent tool.
 
-Smart Noter is compatible with:
+Annotator is compatible with:
 - Python 3.6+
 - Django 2.1.7+
 - Node.js 8.0+
@@ -23,26 +23,26 @@ Smart Noter is compatible with:
 
 ## Installation
 
-We believe that everything has to be easy. Not tricky or daunting, Smart Noter will be the one-to-go package that you will need, from the very first installation to the daily-tasks implementing needs.
+We believe that everything has to be easy. Not tricky or daunting, Annotator will be the one-to-go package that you will need, from the very first installation to the daily-tasks implementing needs.
 
 ### Cloning
 
 First of all, clone the repository:
 
 ```bash
-git clone https://github.com/recogna-lab/smart_noter.git
-cd smart_noter
+git clone https://github.com/recogna-lab/annotator.git
+cd annotator
 ```
 
 _Note for Windows developers: Be sure to configure git to correctly handle line endings or you may encounter `status code 127` errors while running the services in future steps. Running with the git config options below will ensure your git directory correctly handles line endings._
 
 ```bash
-git clone https://github.com/recogna-lab/smart_noter.git --config core.autocrlf=input
+git clone https://github.com/recogna-lab/annotator.git --config core.autocrlf=input
 ```
 
 ### Starting
 
-In order to install the Smart Noter, use the following command:
+In order to install the Annotator, use the following command:
 
 ```bash
 docker-compose pull
@@ -68,7 +68,7 @@ Open a Web browser and go to <http://127.0.0.1:8000/login/>. You should see the 
 
 ## Deployment
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/recogna-lab/smart_noter)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/recogna-lab/annotator)
 
 ---
 
