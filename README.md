@@ -2,7 +2,7 @@
 
 ## Welcome to Annotator.
 
-An easy-to-use solution to your annotation needs. Firstly, it is a fork from Doccano's framework, specifically designed for Weduu's customized needs. Please, follow along the next sections in order to learn more about this excellent tool.
+An easy-to-use solution to your annotation needs. Firstly, it is a fork from Doccano's framework, specifically designed for ML-based needs. Please, follow along the next sections in order to learn more about this excellent tool.
 
 Annotator is compatible with:
 - Python 3.6+
@@ -30,14 +30,14 @@ We believe that everything has to be easy. Not tricky or daunting, Annotator wil
 First of all, clone the repository:
 
 ```bash
-git clone https://github.com/recogna-lab/annotator.git
+git clone https://github.com/gugarosa/annotator.git
 cd annotator
 ```
 
 _Note for Windows developers: Be sure to configure git to correctly handle line endings or you may encounter `status code 127` errors while running the services in future steps. Running with the git config options below will ensure your git directory correctly handles line endings._
 
 ```bash
-git clone https://github.com/recogna-lab/annotator.git --config core.autocrlf=input
+git clone https://github.com/gugarosa/annotator.git --config core.autocrlf=input
 ```
 
 ### Starting
@@ -68,7 +68,7 @@ Open a Web browser and go to <http://127.0.0.1:8000/login/>. You should see the 
 
 ## Deployment
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/recogna-lab/annotator)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/gugarosa/annotator)
 
 ---
 
@@ -92,6 +92,6 @@ No specific additional commands needed.
 
 ## Support
 
-We know that we do our best, but it is inevitable to acknowledge that we make mistakes. If you ever need to report a bug, report a problem, talk to us, please do so! We will be available at our bests at this repository or gth.rosa@uol.com.br.
+We know that we do our best, but it is inevitable to acknowledge that we make mistakes. If you ever need to report a bug, report a problem, talk to us, please do so! We will be available at our bests at this repository or gustavo.rosa@unesp.br.
 
 ---

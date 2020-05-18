@@ -1,9 +1,9 @@
 {
     "name": "annotator",
-    "description": "A Doccano-based project with Weduu's customized needs.",
+    "description": "A Doccano-based project designed to fulfill ML-based needs.",
     "keywords": ["Python", "Machine Learning", "Annotation"],
     "website": "",
-    "repository": "https://github.com/recogna-lab/annotator",
+    "repository": "https://github.com/gugarosa/annotator",
     "logo": "",
     "success_url": "/",
     "env": {
